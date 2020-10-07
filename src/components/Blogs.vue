@@ -18,7 +18,8 @@
       <div class="row blog">
         <div class="col-md-4" v-for="blog in filteredBlogs" :key="blog.id">
           <div class="card w-auto mb-3">
-            <img src="assets/img/download.png" class=" card-img" alt="salam">
+            <img src="../assets/img/no-image.png" class=" card-img" alt="salam">
+
             <div class=" card-body">
               <h5 class="card-title">{{ blog.title }}</h5>
               <router-link class="btn btn-primary" :to="{name:'blog',

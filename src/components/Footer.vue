@@ -44,7 +44,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12">
               <ul class="social-icons">
                 <li><a class=" gitlab" target="_blank" href="https://gitlab.com/mahsaaa.rajabpour/vue-js"><i class="fab fa-gitlab"></i></a></li>
-                <li><a class=" github" href="#"><i class="fab fa-github"></i></a></li>
+                <li><a class=" github" target="_blank" href="https://github.com/mahsaaarajabpour/simple-website"><i class="fab fa-github"></i></a></li>
                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                 <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
               </ul>
