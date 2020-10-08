@@ -2,7 +2,7 @@
   <div class="body">
     <div class="container">
       <div v-if="this.$store.state.userLogin==false" class="col-lg-6 col-md-8 col-sm-12  concentrated ">
-        <p class="alert-danger">the axios of this sample, work with <a href="https://firebase.google.com/"
+        <p class="alert-danger">the axios of this sample, working with <a href="https://firebase.google.com/"
                                                                        target="_blank">Firebase</a>, so if you can't
           login or anything,please first open your vpn!</p>
         <br>

@@ -296,7 +296,9 @@ label[for='toggle-all'] {
 .todo-list li .edit {
   display: none;
 }
-
+.todo-list li.editing .view {
+  display: none;
+}
 
 .footer {
   color: #777;
