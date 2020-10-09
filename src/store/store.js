@@ -80,7 +80,7 @@ export default new Vuex.Store({
             return state.NewItem = payload
         },
         AddItem: (state) => {
-            if (state.NewItem == '') {
+            if (state.NewItem === '') {
                 return
             }
             let subject = state.NewItem
@@ -93,6 +93,13 @@ export default new Vuex.Store({
         RemoveItem: (state, item) => {
             state.items.splice(state.items.indexOf(item), 1)
         },
+        RemoveEmpty: (state, item) => {
+            if (state.editedItem == null || state.editedItem === "") {
+                state.items.splice(state.items.indexOf(item), 1)
+            } else {
+                return
+            }
+        },
         RemoveActiveItem: (state) => {
             for (let index = 0; index < state.items.length; index++) {
                 if (state.items[index].completed) {
@@ -104,14 +111,11 @@ export default new Vuex.Store({
         EditItem: (state, item) => {
             return state.editedItem = item
         },
-        SaveItem: (state, item) => {
+        SaveItem: (state) => {
             if (!state.editedItem) {
                 return
             }
             state.editedItem = null
-            if (!item.title) {
-                this.RemoveItem(item)
-            }
         },
         UserLogin: (state, payload) => {
             state.userLogin = payload
@@ -139,6 +143,9 @@ export default new Vuex.Store({
         RemoveItem: ({commit}, {item}) => {
             commit('RemoveItem', item)
         },
+        RemoveEmpty: ({commit}, {item}) => {
+            commit('RemoveEmpty', item)
+        },
         RemoveActiveItem: ({commit}) => {
             commit('RemoveActiveItem')
         },
@@ -146,6 +153,9 @@ export default new Vuex.Store({
             commit('EditItem', item)
         },
         SaveItem: ({commit}, {item}) => {
+            if (item.title === "" || item.title === " ") {
+                commit('RemoveEmpty', item)
+            }
             commit('SaveItem', item)
         },
         UserLogin: ({commit}, payload) => {
